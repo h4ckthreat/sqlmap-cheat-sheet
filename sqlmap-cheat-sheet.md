@@ -1,4 +1,8 @@
 ```bash
+
+# Enumerate current database in use
+sqlmap -u "$URL" --current-db
+
 # Enumerate databases
 sqlmap --dbms=mysql -u "$URL" --dbs
 
